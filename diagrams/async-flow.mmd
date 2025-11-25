@@ -1,0 +1,16 @@
+sequenceDiagram
+    participant Client
+    participant API
+    participant SQS
+    participant Worker
+    participant Bedrock
+    participant EventBridge
+    
+    Client->>API: POST /async {doc}
+    API->>SQS: SendMessage
+    API-->>Client: 202 Accepted {jobId}
+    
+    SQS->>Worker: Consume Message
+    Worker->>Bedrock: Generate Embeddings
+    Bedrock-->>Worker: Vector
+    Worker->>EventBridge: PutEvents(JobComplete)

@@ -1,0 +1,24 @@
+graph TD
+    Client[Client App] -->|HTTPS| API[API Gateway]
+    
+    subgraph RealTime
+        API -->|POST /infer| LambdaRT[Lambda: Real-Time]
+        LambdaRT --> Bedrock[AWS Bedrock]
+        LambdaRT --> DDB[DynamoDB]
+    end
+    
+    subgraph Async
+        API -->|POST /async| SQS[SQS Queue]
+        SQS --> LambdaAsync[Lambda: Worker]
+        LambdaAsync --> Bedrock
+        LambdaAsync --> DDB
+        LambdaAsync --> EB[EventBridge]
+    end
+    
+    subgraph Workflow
+        API -->|POST /chain| SF[Step Functions]
+        SF --> Lambda1[Lambda: Step 1]
+        SF --> Lambda2[Lambda: Step 2]
+        Lambda1 --> Bedrock
+        Lambda2 --> SageMaker[SageMaker Endpoint]
+    end

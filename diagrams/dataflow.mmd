@@ -1,0 +1,9 @@
+flowchart LR
+    Client --> API
+    API --> Lambda
+    Lambda --> Bedrock
+    Lambda --> SageMaker
+    Lambda --> DDB[(DynamoDB)]
+    Lambda --> S3[(S3 Bucket)]
+    Lambda --> CloudWatch
+    EventBridge --> SQS

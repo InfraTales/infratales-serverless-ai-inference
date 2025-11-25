@@ -1,0 +1,14 @@
+sequenceDiagram
+    participant Client
+    participant API as API Gateway
+    participant Lambda
+    participant Bedrock
+    participant DDB as DynamoDB
+    
+    Client->>API: POST /infer {prompt}
+    API->>Lambda: Invoke
+    Lambda->>Bedrock: InvokeModel(prompt)
+    Bedrock-->>Lambda: Response(text)
+    Lambda->>DDB: PutItem(result)
+    Lambda-->>API: 200 OK {text}
+    API-->>Client: 200 OK {text}

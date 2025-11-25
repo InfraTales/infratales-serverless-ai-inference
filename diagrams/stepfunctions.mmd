@@ -1,0 +1,14 @@
+stateDiagram-v2
+    [*] --> ValidateInput
+    ValidateInput --> ParallelProcessing
+    
+    state ParallelProcessing {
+        [*] --> Summarize
+        [*] --> SentimentAnalysis
+    }
+    
+    Summarize --> MergeResults
+    SentimentAnalysis --> MergeResults
+    
+    MergeResults --> SaveToDDB
+    SaveToDDB --> [*]

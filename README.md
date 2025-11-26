@@ -5,6 +5,7 @@
 ![Architecture Diagram](diagrams/architecture.mmd)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Terraform](https://img.shields.io/badge/Terraform-1.5+-purple.svg)](https://terraform.io)
 [![AWS](https://img.shields.io/badge/AWS-Serverless-orange.svg)](https://aws.amazon.com)
 
@@ -88,3 +89,10 @@ See [docs/troubleshooting.md](docs/troubleshooting.md) for common issues like:
 ### 🟦 Built by InfraTales
 Real engineering stories. Real AWS. Real failures.
 https://infratales.com • Projects • Newsletter • Premium Case Studies
+
+<div align="center">
+  <a href="https://infratales.com">Website</a> •
+  <a href="https://infratales.com/projects">Projects</a> •
+  <a href="https://infratales.com/premium">Premium</a> •
+  <a href="https://infratales.com/newsletter">Newsletter</a>
+</div>

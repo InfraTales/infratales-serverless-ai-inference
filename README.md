@@ -86,13 +86,29 @@ See [docs/troubleshooting.md](docs/troubleshooting.md) for common issues like:
 - Lambda Timeouts.
 
 ---
-### 🟦 Built by InfraTales
-Real engineering stories. Real AWS. Real failures.
-https://infratales.com • Projects • Newsletter • Premium Case Studies
+
+## 👤 Author
+
+**Rahul Ladumor** - Founder of InfraTales
+
+- 🌐 Portfolio: [rahulladumor.in](https://www.rahulladumor.in)
+- ☁️ Blog: [acloudwithrahul.in](https://www.acloudwithrahul.in)
+- 💼 GitHub: [@rahulladumor](https://github.com/rahulladumor)
+- 🏢 Organization: [InfraTales](https://github.com/InfraTales)
+- 📧 Email: rahul.ladumor@infratales.com
+- 💬 LinkedIn: [linkedin.com/in/rahulladumor](https://www.linkedin.com/in/rahulladumor)
+
+---
 
 <div align="center">
-  <a href="https://infratales.com">Website</a> •
-  <a href="https://infratales.com/projects">Projects</a> •
-  <a href="https://infratales.com/premium">Premium</a> •
-  <a href="https://infratales.com/newsletter">Newsletter</a>
+
+**Built with ❤️ by [InfraTales](https://github.com/InfraTales)**
+
+Real engineering stories. Real AWS. Real failures.
+
+<a href="https://infratales.com">Website</a> •
+<a href="https://infratales.com/projects">Projects</a> •
+<a href="https://infratales.com/premium">Premium</a> •
+<a href="https://infratales.com/newsletter">Newsletter</a>
+
 </div>

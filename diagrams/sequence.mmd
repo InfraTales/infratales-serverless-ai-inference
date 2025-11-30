@@ -1,0 +1,35 @@
+sequenceDiagram
+    participant Client
+    participant CloudFront as CloudFront CDN
+    participant API as API Gateway
+    participant Authorizer as Lambda Authorizer
+    participant Inference as Inference Lambda
+    participant Cache as ElastiCache
+    participant Bedrock as Amazon Bedrock
+    participant DDB as DynamoDB
+    participant CW as CloudWatch
+    
+    Client->>CloudFront: POST /v1/inference
+    CloudFront->>API: Forward Request
+    API->>Authorizer: Validate Token
+    Authorizer-->>API: Authorized
+    
+    API->>Inference: Invoke Handler
+    Inference->>CW: Log Request Start
+    
+    Inference->>Cache: Check Cache(hash)
+    
+    alt Cache Hit
+        Cache-->>Inference: Cached Response
+        Inference->>CW: Log Cache Hit
+    else Cache Miss
+        Inference->>Bedrock: InvokeModel(prompt)
+        Bedrock-->>Inference: Model Response
+        Inference->>Cache: Store(hash, response)
+        Inference->>DDB: PutItem(audit_log)
+    end
+    
+    Inference->>CW: Log Latency Metrics
+    Inference-->>API: 200 OK {response}
+    API-->>CloudFront: Response
+    CloudFront-->>Client: 200 OK {response}

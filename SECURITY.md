@@ -26,3 +26,7 @@ When using this project:
 |---------|-----------|
 | Latest  | ✅        |
 | < 1.0   | ❌        |
+
+## Contact
+
+For security concerns, email: security@infratales.com
